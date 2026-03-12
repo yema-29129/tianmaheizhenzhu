@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>天马黑珍珠内容索引</title>
+  <meta
+    name="description"
+    content="天马黑珍珠社群内容索引站，支持按年份、主题、作者、期数、类型和精华内容筛选。"
+  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;700&family=Outfit:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="./assets/styles.css">
+</head>
+<body>
+  <div class="site-shell">
+    <header class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Tianma Black Pearl Archive</p>
+        <h1>天马黑珍珠内容索引</h1>
+        <p class="hero-text">
+          把社群里的重点内容整理成一个可搜索、可筛选、可持续更新的知识入口，方便同学们随时查找。
+        </p>
+      </div>
+
+      <section class="hero-panel">
+        <div class="stats-grid">
+          <article class="stat-card">
+            <span class="stat-label">内容总数</span>
+            <strong class="stat-value" id="stat-total">0</strong>
+          </article>
+          <article class="stat-card">
+            <span class="stat-label">精华内容</span>
+            <strong class="stat-value" id="stat-elite">0</strong>
+          </article>
+          <article class="stat-card">
+            <span class="stat-label">主题分类</span>
+            <strong class="stat-value" id="stat-categories">0</strong>
+          </article>
+          <article class="stat-card">
+            <span class="stat-label">活跃作者</span>
+            <strong class="stat-value" id="stat-authors">0</strong>
+          </article>
+        </div>
+      </section>
+    </header>
+
+    <main class="layout">
+      <section class="content-stack">
+        <section class="filters-panel">
+        <div class="search-row">
+          <label class="field search-field">
+            <span class="field-label">搜索</span>
+            <input
+              id="search-input"
+              type="search"
+              placeholder="搜索标题、作者、主题、备注、期数"
+            >
+          </label>
+        </div>
+
+        <div class="toolbar-row">
+          <label class="field">
+            <span class="field-label">排序</span>
+            <select id="sort-select">
+              <option value="date-desc">最新优先</option>
+              <option value="date-asc">最早优先</option>
+              <option value="title-asc">标题 A-Z</option>
+            </select>
+          </label>
+
+          <label class="field">
+            <span class="field-label">年份</span>
+            <select id="year-select"></select>
+          </label>
+
+          <label class="field">
+            <span class="field-label">作者</span>
+            <select id="author-select"></select>
+          </label>
+
+          <label class="field">
+            <span class="field-label">期数</span>
+            <select id="issue-select"></select>
+          </label>
+
+          <label class="field">
+            <span class="field-label">类型</span>
+            <select id="type-select"></select>
+          </label>
+
+          <label class="toggle-pill">
+            <input id="elite-only" type="checkbox">
+            <span>只看精华</span>
+          </label>
+          <label class="toggle-pill">
+            <input id="has-note" type="checkbox">
+            <span>只看有备注</span>
+          </label>
+        </div>
+
+        <div class="chip-section">
+          <div class="chip-head">
+            <span class="field-label">主题分类</span>
+            <button class="ghost-btn" id="reset-filters" type="button">清空筛选</button>
+          </div>
+          <div class="chip-row" id="category-chips"></div>
+        </div>
+        </section>
+
+        <section class="results-panel">
+          <div class="results-head">
+            <div>
+              <p class="results-kicker">内容列表</p>
+              <h2>筛选结果</h2>
+            </div>
+            <p class="results-summary" id="results-summary">正在加载内容…</p>
+          </div>
+
+          <div class="active-filters" id="active-filters"></div>
+          <div class="cards-grid" id="cards-grid"></div>
+          <div class="empty-state hidden" id="empty-state">
+            <h3>没有找到匹配内容</h3>
+            <p>可以试试减少筛选条件，或者换一个关键词重新搜索。</p>
+          </div>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <dialog class="detail-dialog" id="detail-dialog">
+    <button class="dialog-close" id="dialog-close" type="button" aria-label="关闭详情">×</button>
+    <div class="dialog-body" id="dialog-body"></div>
+  </dialog>
+
+  <script src="./assets/content-data.js"></script>
+  <script src="./assets/app.js"></script>
+</body>
+</html>
