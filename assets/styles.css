@@ -709,8 +709,57 @@ select:focus {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
+  .cards-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   .about-link-list {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .site-shell {
+    width: min(100% - 20px, 1360px);
+  }
+
+  .hero {
+    padding: 24px;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.9rem, 8vw, 2.8rem);
+  }
+
+  .hero-text {
+    font-size: 0.96rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .toolbar-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .cards-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .content-card {
+    padding: 16px;
+  }
+
+  .card-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .card-actions a,
+  .card-actions button {
+    width: 100%;
+    min-height: 42px;
   }
 }
 
@@ -723,20 +772,37 @@ select:focus {
   .top-nav {
     flex-direction: column;
     align-items: start;
-    padding: 20px;
+    padding: 18px;
     border-radius: 22px;
+  }
+
+  .nav-links {
+    width: 100%;
+    gap: 10px 14px;
+  }
+
+  .nav-links a {
+    font-size: 0.95rem;
   }
 
   .hero,
   .about-panel,
   .filters-panel,
   .results-panel {
-    padding: 20px;
+    padding: 18px;
     border-radius: 22px;
   }
 
+  .brand-mark {
+    font-size: 1.2rem;
+  }
+
+  .hero {
+    gap: 18px;
+  }
+
   .stats-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
   }
 
   .results-head {
@@ -749,12 +815,99 @@ select:focus {
     grid-template-columns: 1fr;
   }
 
+  .toggle-pill {
+    min-height: 46px;
+    padding: 0 12px;
+    font-size: 0.95rem;
+  }
+
+  .chip-head {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .chip-row {
+    gap: 8px;
+  }
+
+  .chip {
+    padding: 9px 12px;
+    font-size: 0.95rem;
+  }
+
   .cards-grid {
     grid-template-columns: 1fr;
   }
 
+  .content-card {
+    gap: 14px;
+    padding: 18px 16px;
+  }
+
+  .content-title {
+    font-size: 1.22rem;
+    line-height: 1.55;
+  }
+
+  .card-meta {
+    gap: 8px;
+  }
+
+  .meta-badge,
+  .category-badge,
+  .status-badge {
+    font-size: 0.9rem;
+    padding: 8px 11px;
+  }
+
+  .card-actions {
+    gap: 10px;
+  }
+
+  .card-actions a,
+  .card-actions button {
+    min-height: 46px;
+    font-size: 1rem;
+  }
+
+  .results-head h2,
+  .standalone-about h1 {
+    font-size: 2rem;
+  }
+
   .dialog-body {
     padding: 24px 20px;
+  }
+}
+
+@media (max-width: 420px) {
+  .site-shell {
+    width: calc(100% - 16px);
+  }
+
+  .top-nav,
+  .hero,
+  .about-panel,
+  .filters-panel,
+  .results-panel {
+    border-radius: 18px;
+  }
+
+  .hero,
+  .about-panel,
+  .filters-panel,
+  .results-panel,
+  .top-nav {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .content-title {
+    font-size: 1.14rem;
+  }
+
+  .dialog-body {
+    padding: 20px 16px;
   }
 }
 
